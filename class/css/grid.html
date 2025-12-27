@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <style>
+        .contener {
+            width: 500px;
+            height: 400px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px; 
+            padding: 10px;
+            background-color: #6d6d6d;
+        }
+
+        .item{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .item-1{
+            background-color: #32148b;
+            border: 2px solid black;
+            color: white;
+            padding: 20px;
+            font-size: 40px;
+            grid-column: 1/4;
+        }
+        .item-2{
+            background-color: #1ba1d6;
+            border: 2px solid black;
+            color: white;
+            padding: 20px;
+            font-size: 40px;
+            grid-row:2/4;
+        }
+
+        .item-3{
+            background-color: #23239e;
+            border: 2px solid black;
+            color: white;
+            padding: 20px;
+            font-size: 40px;
+            grid-column: 2/4;
+
+        }
+        .item-4{
+            background-color: #0f376f;
+            border: 2px solid black;
+            color: white;
+            padding: 20px;
+            font-size: 40px;
+        }
+        .item-5{
+            background-color: #0f124e;
+            border: 2px solid black;
+            color: white;
+            padding: 20px;
+            font-size: 40px;
+        }
+        .item-6{
+            background-color: #0f2f4e;
+            border: 2px solid black;
+            color: white;
+            padding: 20px;
+            font-size: 40px;
+            grid-column: 1/4; }
+
+    </style>
+</head>
+<body>
+    <div class="contener">
+        <div class="item item-1">header</div>
+        <div class="item item-2">sidebar</div>
+        <div class="item item-3">Item 1</div>
+        <div class="item item-4">Item 2</div>
+        <div class="item item-5">Item 3</div>
+        <div class="item item-6">footer</div>
+    </div>
+</body>
+</html>

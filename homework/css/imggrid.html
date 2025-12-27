@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>imggrid</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .contener {
+            width: 350px;
+            height: 350px;
+            display: grid;
+            gap: 10px; 
+            grid-template-areas:
+            "item-1 item-2 item-2"
+            "item-1 item-3 item-4"                
+            "item-5 item-6 item-7";
+            padding: 10px;
+        }
+
+        .item{
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .item-1 { grid-area: item-1; }
+        .item-2 { grid-area: item-2; }
+        .item-3 { grid-area: item-3; }
+        .item-4 { grid-area: item-4; }
+        .item-5 { grid-area: item-5; }
+        .item-6 { grid-area: item-6; }
+        .item-7 { grid-area: item-7; }      
+        
+    </style>
+</head>
+<body>
+    <div class="contener">
+        <div class="item item-1">
+        <img src="../src/1.jpg" alt="1">
+        </div>
+        <div class="item item-2">
+        <img src="../src/2.jpg" alt="2">
+        </div>
+        <div class="item item-3">
+        <img src="../src/3.jpg" alt="3">
+        </div>
+        <div class="item item-4">
+        <img src="../src/4.jpg" alt="4">
+        </div>
+        <div class="item item-5">
+        <img src="../src/5.jpg" alt="5">
+        </div>
+        <div class="item item-6">
+        <img src="../src/6.jpg" alt="6">
+        </div>
+        <div class="item item-7">
+        <img src="../src/7.jpg" alt="7">
+        </div>        
+    </div>
+</body>
+</html>
