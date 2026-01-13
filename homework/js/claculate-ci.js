@@ -1,4 +1,3 @@
-
 function claculateCompoundInterest(principal, rate, time) {
   return principal.map(p => {
     let amount = p;
@@ -14,3 +13,5 @@ let rate = 5;
 let time = 2;
 let interest = claculateCompoundInterest(principal, rate, time);
 console.log(interest);
+
+
