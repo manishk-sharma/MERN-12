@@ -44,4 +44,8 @@ import fs from 'fs';
 //   }
 // });
 
-fs.unlinkSync('./manish.pdf');
+try {
+  fs.unlinkSync('./manish.pdf');
+} catch (err) {
+  console.log("File not found or already deleted");
+}
