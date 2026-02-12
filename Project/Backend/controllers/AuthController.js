@@ -61,7 +61,8 @@ AuthController.post("/login", async (req, res) => {
     //send mail...
     const subject = "Login Notification";
     const text = `Hi ${user.username},\n\nThis is a notification that your account was just accessed. If this was you, you can safely ignore this email.`;
-    await sendMail({ to: user.email, subject, text });
+    // MailController is the default export function from MailController.js
+    await MailController({ to: user.email, subject, text });
 
     res.status(200).json({
       message: "Login successful",
@@ -149,17 +150,17 @@ AuthController.delete("/deactivate", async (req, res) => {
       return res.status(400).json({ message: "error deleting" });
 
     res.status(200).json({ message: "profile deleted successfuly" });
-  } catch (err) {}
+  } catch (err) { }
 });
 
 export default AuthController;
 
 
-//todo 
+//todo
 // 1. img. titel. disc. price. cat.  usig  prpos(map)
 // 2. redex/redse persiste
 // 3. Add role-based access control for different user roles
 // 4. Implement jwt token expiration and refresh tokens for enhanced security
-// 5. decrypt 
+// 5. decrypt
 // 6. mvc architecture
 // 7. frontend
