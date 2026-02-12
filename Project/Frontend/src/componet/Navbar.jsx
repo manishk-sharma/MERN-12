@@ -1,14 +1,21 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectIsAuthenticated, logout } from '../redux/authSlice';
+import { setSearchTerm, selectSearchTerm } from '../redux/productSlice';
 
 const Navbar = ({ cartCount }) => {
   const isAuthenticated = useSelector(selectIsAuthenticated);
+  const searchTerm = useSelector(selectSearchTerm);
   const dispatch = useDispatch();
 
   const handleLogout = () => {
     dispatch(logout());
+  };
+
+  const handleSearchChange = (e) => {
+    dispatch(setSearchTerm(e.target.value));
   };
 
   return (
@@ -22,6 +29,22 @@ const Navbar = ({ cartCount }) => {
           <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
           ShopBrand
         </Link>
+
+        {/* Search Bar */}
+        <div className="hidden md:flex flex-1 max-w-md mx-4">
+          <div className="relative w-full">
+            <input
+              type="text"
+              placeholder="Search products..."
+              value={searchTerm}
+              onChange={handleSearchChange}
+              className="w-full px-4 py-2 border rounded-full bg-gray-100 dark:bg-gray-700 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white"
+            />
+            <div className="absolute right-3 top-2.5 text-gray-400">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+            </div>
+          </div>
+        </div>
 
         {/* Links */}
         <ul className="flex space-x-6 items-center">
